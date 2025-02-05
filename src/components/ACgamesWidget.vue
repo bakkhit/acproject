@@ -18,12 +18,6 @@ defineProps({
   border-radius: 10%;
   align-items: center;
   justify-content: center;
-  transition: scale 0.3s;
-}
-
-.widget:hover {
-  cursor: pointer;
-  scale: 1.1;
 }
 
 .widget img {
