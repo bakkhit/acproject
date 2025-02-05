@@ -3,7 +3,7 @@ export const data = [
   [
     {
       name: "Assassins Creed",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -63,11 +63,11 @@ export const data = [
         {
           sequence: 10,
           mission: [
-            "Retour à Masyaf : Affrontement avec Al Mualim"
+            "Retour à Masyaf : Affrontement avec Al 0Mualim"
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "sauvetage_citoyens": 36,
         "collecte_drapeaux": 420,
         "eliminer_templiers": 60,
@@ -76,7 +76,7 @@ export const data = [
     },
     {
       name: "Assassins Creed II",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -165,7 +165,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 30,
         "actions_punitives": 15,
         "missions_courrier": 10,
@@ -176,7 +176,7 @@ export const data = [
     },
     {
       name: "Assassins Creed Brotherhood",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -228,7 +228,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 15,
         "missions_guildes": 10,
         "courses": 10,
@@ -238,7 +238,7 @@ export const data = [
     },
     {
       name: "Assassins Creed Revelations",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -290,7 +290,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 12,
         "recrutement_assassins": 8,
         "fortifications": 5,
@@ -299,7 +299,7 @@ export const data = [
     },
     {
       name: "Assassins Creed III",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -349,7 +349,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 20,
         "missions_marines": 12,
         "forts": 7,
@@ -359,7 +359,7 @@ export const data = [
     },
     {
       name: "Assassins Creed IV",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -433,7 +433,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 30,
         "chasse_aux_tresors": 10,
         "forts": 10,
@@ -444,7 +444,7 @@ export const data = [
     },
     {
       name: "Assassins Creed Rogue",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -488,7 +488,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 15,
         "forts": 7,
         "chasse_aux_templiers": 10,
@@ -498,7 +498,7 @@ export const data = [
     },
     {
       name: "Assassins Creed Unity",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -566,7 +566,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 20,
         "mysteres_paris": 18,
         "clubs": 7,
@@ -575,7 +575,7 @@ export const data = [
     },
     {
       name: "Assassins Creed Syndicate",
-      missions_principales: [
+      mainQuest: [
         {
           sequence: 1,
           mission: [
@@ -662,7 +662,7 @@ export const data = [
           ]
         }
       ],
-      "missions_secondaires": {
+      sideQuest: {
         "contrats_assassinat": 20,
         "course_aux_voitures": 12,
         "mysteres_london": 15,

@@ -1,6 +1,13 @@
 <template>
   <div>
-    <p>{{selectedGame}}</p>
+    <p>{{selectedGame.name}}</p>
+    <li style="color: white;" v-for= "quest in selectedGame.mainQuest">
+      <input type="checkbox">{{ quest }}</input>
+    </li>
+    <br>
+    <li style="color: white;" v-for= "quest in selectedGame.sideQuest">
+      <input type="checkbox">{{ quest }}</input>
+    </li>
   </div>
 </template>
 
@@ -17,8 +24,10 @@ export default {
   created() {
     const gameClass = this.$route.params.gameClass;
     this.selectedGame = this.quests.find(game => game.name.includes(gameClass));
-    console.log(this.quests)
-  }
+    console.log(gameClass)
+    console.log(this.selectedGame.mainQuest)
+  },
+  
 };
 </script>
 

@@ -10,7 +10,7 @@ const router = createRouter({
       component: AllGamesWidgets
     },
     {
-      path: '/achivments',
+      path: '/achivments/:gameClass',
       name: 'achievments',
       component: () => import('../Views/Achievments.vue'),
       props: route => ({ gameClass: route.params.gameClass })

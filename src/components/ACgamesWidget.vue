@@ -1,8 +1,6 @@
 <template>
   <div class="widget">
-    <RouterLink :to="{name: 'achievments'}">
-      <img :src="image" alt="Game Image" />
-    </RouterLink>
+    <img :src="image" alt="Game Image" />
   </div>
 </template>
 
@@ -29,7 +27,6 @@ defineProps({
 }
 
 .widget img {
-  margin-left: 15%;
   width: 70%;
   object-fit: cover;
 }

@@ -8,15 +8,15 @@
         <li class="menuDeroulant">
           <a href="#" @click.prevent="toggleDropdown">GameS</a>
           <ul class="sousMenu" v-if="isDropdownOpen">
-            <li class="ac1"><router-link to="/achivments" @click.native="emitClass('Assassins Creed')">Assassin'S <span class="redText">CREED</span></router-link></li>
-            <li class="ac2"><router-link to="/achivments" @click.native="emitClass('Assassins Creed II')">Assassin'S <span class="redText">CREED II</span></router-link></li>
-            <li class="acbh"><router-link to="/achivments" @click.native="emitClass('Assassins Creed Brotherhood')">Assassin'S <span class="creed">CREED <span class="redText">BrotherhooD</span></span></router-link></li>
-            <li class="acrev"><router-link to="/achivments" @click.native="emitClass('Assassins Creed Revlations')">Assassin'S <span class="creed">CREED <span class="redText">RevelationS</span></span></router-link></li>
-            <li class="ac3"><router-link to="/achivments" @click.native="emitClass('Assassins Creed III')">Assassin'S <span class="redText">CREED III</span></router-link></li>
-            <li class="ac4"><router-link to="/achivments" @click.native="emitClass('Assassins Creed IV')">Assassin'S <span class="creed">CREED IV <br><span class="redText">Black flaG</span></span></router-link></li>
-            <li class="acrogue"><router-link to="/achivments" @click.native="emitClass('Assassins Creed Rogue')">Assassin'S <span class="creed">CREED <span class="redText">RoguE</span></span></router-link></li>
-            <li class="acunity"><router-link to="/achivments" @click.native="emitClass('Assassins Creed Unity')">Assassin'S <span class="creed">CREED <span class="redText">UnitY</span></span></router-link></li>
-            <li class="acsyndicate"><router-link to="/achivments" @click.native="emitClass('Assassins Creed Syndicate')">Assassin'S <span class="creed">CREED <span class="redText">SyndicatE</span></span></router-link></li>
+            <li class="ac1"><router-link to="/achivments/Assassins Creed">Assassin'S <span class="redText">CREED</span></router-link></li>
+            <li class="ac2"><router-link to="/achivments/Assassins Creed II">Assassin'S <span class="redText">CREED II</span></router-link></li>
+            <li class="acbh"><router-link to="/achivments/Assassins Creed Brotherhood">Assassin'S <span class="creed">CREED <span class="redText">BrotherhooD</span></span></router-link></li>
+            <li class="acrev"><router-link to="/achivments/Assassins Creed Revelations">Assassin'S <span class="creed">CREED <span class="redText">RevelationS</span></span></router-link></li>
+            <li class="ac3"><router-link to="/achivments/Assassins Creed III">Assassin'S <span class="redText">CREED III</span></router-link></li>
+            <li class="ac4"><router-link to="/achivments/Assassins Creed IV">Assassin'S <span class="creed">CREED IV <br><span class="redText">Black flaG</span></span></router-link></li>
+            <li class="acrogue"><router-link to="/achivments/Asassins Creed Rogue">Assassin'S <span class="creed">CREED <span class="redText">RoguE</span></span></router-link></li>
+            <li class="acunity"><router-link to="/achivments/Assassins Creed Unity">Assassin'S <span class="creed">CREED <span class="redText">UnitY</span></span></router-link></li>
+            <li class="acsyndicate"><router-link to="/achivments/Assassins Creed Syndicate">Assassin'S <span class="creed">CREED <span class="redText">SyndicatE</span></span></router-link></li>
           </ul>
         </li>
       </ul>
