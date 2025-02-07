@@ -1,13 +1,16 @@
 <template>
   <div>
-    <p>{{selectedGame.name}}</p>
-    <li style="color: white;" v-for= "quest in selectedGame.mainQuest">
-      <input type="checkbox">{{ quest }}</input>
-    </li>
+    <p>{{ selectedGame.name }}</p>
+    <div v-for="(sequence, seqIndex) in selectedGame.mainQuest" :key="seqIndex">
+      <h3>Sequence {{ seqIndex + 1 }}</h3>
+      <li style="color: white;" v-for="(mission, index) in sequence.mission" :key="index">
+        <input type="checkbox">{{ mission }}</input>
+      </li>
+    </div>
     <br>
-    <li style="color: white;" v-for= "quest in selectedGame.sideQuest">
+    <p style="color: white;" v-for="quest in selectedGame.sideQuest">
       <input type="checkbox">{{ quest }}</input>
-    </li>
+    </p>
   </div>
 </template>
 
@@ -27,7 +30,6 @@ export default {
     console.log(gameClass)
     console.log(this.selectedGame.mainQuest)
   },
-  
 };
 </script>
 
