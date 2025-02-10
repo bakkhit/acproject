@@ -46,9 +46,14 @@ export default {
       }, {});
     },
     initializeCheckedMissions() {
-      this.checkedMissions = this.selectedGame.mainQuest.map(sequence => 
-        sequence.mission.map(() => false)
-      );
+      const savedMissions = JSON.parse(localStorage.getItem(`checkedMissions_${this.selectedGame.name}`));
+      if (savedMissions) {
+        this.checkedMissions = savedMissions;
+      } else {
+        this.checkedMissions = this.selectedGame.mainQuest.map(sequence => 
+          sequence.mission.map(() => false)
+        );
+      }
     },
     incrementCounter(key, max) {
       if (this.sideQuestCounters[key] < max) {
@@ -61,7 +66,7 @@ export default {
       }
     },
     handleCheckboxChange() {
-      console.log("Checkbox state changed.");
+      localStorage.setItem(`checkedMissions_${this.selectedGame.name}`, JSON.stringify(this.checkedMissions));
     }
   },
   computed: {
