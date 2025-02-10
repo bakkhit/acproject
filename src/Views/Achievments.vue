@@ -3,7 +3,7 @@
     <p>{{ selectedGame.name }}</p>
     <div v-for="(sequence, seqIndex) in selectedGame.mainQuest" :key="seqIndex">
       <h3>Sequence {{ seqIndex + 1 }}</h3>
-      <p style="color: white;" v-for="(mission, index) in sequence.mission" :key="index">
+      <p style="color: black; background-color: grey; width: fit-content; border: solid grey 10px; border-radius: 50px;" v-for="(mission, index) in sequence.mission" :key="index">
         <input v-model="checkedMissions[seqIndex][index]" @change="handleCheckboxChange" :id="index" type="checkbox">{{ mission }}</input>
       </p>
     </div>
@@ -15,7 +15,7 @@
       <button @click="incrementCounter(key, value)">+</button>
       <button @click="decrementCounter(key)">-</button>
     </div>
-    <p>Total checked missions: {{ totalCheckedMissions }}</p>
+    <p>Total checked missions: {{ totalCheckedMissions.checked }} / {{ totalCheckedMissions.total }}</p>
   </div>
 </template>
 
@@ -47,7 +47,7 @@ export default {
     },
     initializeCheckedMissions() {
       const savedMissions = JSON.parse(localStorage.getItem(`checkedMissions_${this.selectedGame.name}`));
-      if (savedMissions) {
+      if (savedMissions && savedMissions.length === this.selectedGame.mainQuest.length) {
         this.checkedMissions = savedMissions;
       } else {
         this.checkedMissions = this.selectedGame.mainQuest.map(sequence => 
@@ -71,7 +71,9 @@ export default {
   },
   computed: {
     totalCheckedMissions() {
-      return this.checkedMissions.flat().filter(Boolean).length;
+      const checked = this.checkedMissions.flat().filter(Boolean).length;
+      const total = this.checkedMissions.flat().length;
+      return { checked, total };
     }
   },
   watch: {

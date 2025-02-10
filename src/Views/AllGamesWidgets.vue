@@ -36,5 +36,9 @@ export default {
   border-radius: 10%;
   align-items: center;
   justify-content: center;
+  transition: opacity 500ms ease;
+}
+.widgets:hover{
+  opacity: 50%;
 }
 </style>
