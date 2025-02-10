@@ -16,6 +16,8 @@
       <button @click="decrementCounter(key)">-</button>
     </div>
     <p>Total checked missions: {{ totalCheckedMissions.checked }} / {{ totalCheckedMissions.total }}</p>
+    <p>Total completed side quests: {{ totalCompletedSideQuests.completed }} / {{ totalCompletedSideQuests.total }}</p>
+    <p>Completion percentage: {{ completionPercentage }}%</p>
   </div>
 </template>
 
@@ -74,6 +76,16 @@ export default {
       const checked = this.checkedMissions.flat().filter(Boolean).length;
       const total = this.checkedMissions.flat().length;
       return { checked, total };
+    },
+    totalCompletedSideQuests() {
+      const completed = Object.values(this.sideQuestCounters).reduce((sum, count) => sum + count, 0);
+      const total = Object.values(this.selectedGame.sideQuest).reduce((sum, count) => sum + count, 0);
+      return { completed, total };
+    },
+    completionPercentage() {
+      const totalMissions = this.totalCheckedMissions.total + this.totalCompletedSideQuests.total;
+      const completedMissions = this.totalCheckedMissions.checked + this.totalCompletedSideQuests.completed;
+      return totalMissions > 0 ? ((completedMissions / totalMissions) * 100).toFixed(2) : 0;
     }
   },
   watch: {
