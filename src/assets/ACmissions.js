@@ -63,15 +63,15 @@ export const data = [
         {
           sequence: 10,
           mission: [
-            "Retour à Masyaf : Affrontement avec Al 0Mualim"
+            "Retour à Masyaf : Affrontement avec Al Mualim"
           ]
         }
       ],
       sideQuest: {
-        "sauvetage_citoyens": 36,
-        "collecte_drapeaux": 420,
-        "eliminer_templiers": 60,
-        "points_observation": 91
+        "sauvetage citoyens": 36,
+        "collecte drapeaux": 420,
+        "eliminer templiers": 60,
+        "points observation": 91
       }
     },
     {
@@ -166,9 +166,9 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 30,
-        "actions_punitives": 15,
-        "missions_courrier": 10,
+        "contrats assassinat": 30,
+        "actions punitives": 15,
+        "missions courrier": 10,
         "courses": 10,
         "plumes": 100,
         "trésors": 330
@@ -229,11 +229,11 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 15,
-        "missions_guildes": 10,
+        "contrats assassinat": 15,
+        "missions guildes": 10,
         "courses": 10,
         "trésors": 144,
-        "reliques_romaines": 30
+        "reliques romaines": 30
       }
     },
     {
@@ -291,10 +291,10 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 12,
-        "recrutement_assassins": 8,
+        "contrats assassinat": 12,
+        "recrutement assassins": 8,
         "fortifications": 5,
-        "livres_mystiques": 10
+        "livres mystiques": 10
       }
     },
     {
@@ -350,11 +350,11 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 20,
-        "missions_marines": 12,
+        "contrats assassinat": 20,
+        "missions marines": 12,
         "forts": 7,
-        "chasses_aux_tresors": 6,
-        "clubs_coloniaux": 5
+        "chasses aux tresors": 6,
+        "clubs coloniaux": 5
       }
     },
     {
@@ -434,12 +434,12 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 30,
-        "chasse_aux_tresors": 10,
+        "contrats assassinat": 30,
+        "chasse aux tresors": 10,
         "forts": 10,
-        "navires_legendaires": 4,
-        "chasse_animaux": 15,
-        "fragments_animus": 200
+        "navires legendaires": 4,
+        "chasse animaux": 15,
+        "fragments animus": 200
       }
     },
     {
@@ -489,11 +489,11 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 15,
+        "contrats assassinat": 15,
         "forts": 7,
-        "chasse_aux_templiers": 10,
-        "fragments_animus": 200,
-        "bouteilles_messages": 20
+        "chasse aux templiers": 10,
+        "fragments animus": 200,
+        "bouteilles messages": 20
       }
     },
     {
@@ -567,8 +567,8 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 20,
-        "mysteres_paris": 18,
+        "contrats assassinat": 20,
+        "mysteres paris": 18,
         "clubs": 7,
         "coffres": 294
       }
@@ -663,11 +663,11 @@ export const data = [
         }
       ],
       sideQuest: {
-        "contrats_assassinat": 20,
-        "course_aux_voitures": 12,
-        "mysteres_london": 15,
-        "coffres_london": 300,
-        "taches_diverses": 35
+        "contrats assassinat": 20,
+        "course aux voitures": 12,
+        "mysteres london": 15,
+        "coffres london": 300,
+        "taches diverses": 35
       }
     }
   ]

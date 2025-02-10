@@ -3,33 +3,84 @@
     <p>{{ selectedGame.name }}</p>
     <div v-for="(sequence, seqIndex) in selectedGame.mainQuest" :key="seqIndex">
       <h3>Sequence {{ seqIndex + 1 }}</h3>
-      <li style="color: white;" v-for="(mission, index) in sequence.mission" :key="index">
-        <input type="checkbox">{{ mission }}</input>
-      </li>
+      <p style="color: white;" v-for="(mission, index) in sequence.mission" :key="index">
+        <input v-model="checkedMissions[seqIndex][index]" @change="handleCheckboxChange" :id="index" type="checkbox">{{ mission }}</input>
+      </p>
     </div>
     <br>
-    <p style="color: white;" v-for="quest in selectedGame.sideQuest">
-      <input type="checkbox">{{ quest }}</input>
-    </p>
+    <div v-for="(value, key) in selectedGame.sideQuest" :key="key" style="color: white; display: flex; align-items: center;">
+      <label>{{ key }}: </label>
+      <input type="number" :min="0" :max="value" v-model.number="sideQuestCounters[key]" style="margin-left: 10px; width: 50px;">
+      <p>/ {{ value }}</p>
+      <button @click="incrementCounter(key, value)">+</button>
+      <button @click="decrementCounter(key)">-</button>
+    </div>
+    <p>Total checked missions: {{ totalCheckedMissions }}</p>
   </div>
 </template>
 
 <script>
 import { data } from "../assets/ACmissions";
+import { useQuestStore } from "../stores/quete";
 
 export default {
   data() {
     return {
       quests: data[0],
-      selectedGame: null
+      selectedGame: null,
+      sideQuestCounters: {},
+      checkedMissions: []
     };
   },
   created() {
     const gameClass = this.$route.params.gameClass;
     this.selectedGame = this.quests.find(game => game.name.includes(gameClass));
-    console.log(gameClass)
-    console.log(this.selectedGame.mainQuest)
+    this.initializeCounters();
+    this.initializeCheckedMissions();
   },
+  methods: {
+    initializeCounters() {
+      this.sideQuestCounters = Object.keys(this.selectedGame.sideQuest).reduce((acc, key) => {
+        acc[key] = 0;
+        return acc;
+      }, {});
+    },
+    initializeCheckedMissions() {
+      this.checkedMissions = this.selectedGame.mainQuest.map(sequence => 
+        sequence.mission.map(() => false)
+      );
+    },
+    incrementCounter(key, max) {
+      if (this.sideQuestCounters[key] < max) {
+        this.sideQuestCounters[key]++;
+      }
+    },
+    decrementCounter(key) {
+      if (this.sideQuestCounters[key] > 0) {
+        this.sideQuestCounters[key]--;
+      }
+    },
+    handleCheckboxChange() {
+      console.log("Checkbox state changed.");
+    }
+  },
+  computed: {
+    totalCheckedMissions() {
+      return this.checkedMissions.flat().filter(Boolean).length;
+    }
+  },
+  watch: {
+    sideQuestCounters: {
+      handler(newVal) {
+        for (const key in newVal) {
+          if (newVal[key] > this.selectedGame.sideQuest[key]) {
+            this.sideQuestCounters[key] = this.selectedGame.sideQuest[key];
+          }
+        }
+      },
+      deep: true
+    }
+  }
 };
 </script>
 
