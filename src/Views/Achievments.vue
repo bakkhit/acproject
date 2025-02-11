@@ -23,7 +23,7 @@
 
 <script>
 import { data } from "../assets/ACmissions";
-import { useQuestStore } from "../stores/quete";
+//import { useQuestStore } from "../stores/quete";
 
 export default {
   data() {
