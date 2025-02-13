@@ -101,6 +101,7 @@ function updateImages(point) {
 
 <style scoped>
 #container {
+  font-size: 20px;
   padding-left: 5%;
   width: 100%;
   height: 65vh;

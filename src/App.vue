@@ -2,7 +2,7 @@
   <div id="app">
     <Header />
     <TextHeader />
-    <RouterView class="content" />
+    <router-view :key="$route.fullPath" />
     <Footer />
   </div>
 </template>

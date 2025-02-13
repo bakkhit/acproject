@@ -19,6 +19,11 @@ const router = createRouter({
       path: '/timeline/',
       name: 'timeline',
       component:  () => import('../Views/timeLine.vue')
+    },
+    {
+      path: '/quiz/',
+      name: 'quiz',
+      component:  () => import('../Views/quiz.vue')
     }
   ],
 })

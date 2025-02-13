@@ -28,6 +28,10 @@
 import { ref } from 'vue'
 import { useRouter } from 'vue-router'
 
+const refreshPage = () => {
+  location.reload();
+};
+
 const isDropdownOpen = ref(false)
 const router = useRouter()
 
