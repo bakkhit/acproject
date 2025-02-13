@@ -15,8 +15,18 @@
       <button @click="incrementCounter(key, value)">+</button>
       <button @click="decrementCounter(key)">-</button>
     </div>
+    <br>
+    <details>
+      <summary style="color: white; cursor: pointer;">Trophies</summary>
+      <div v-for="(description, trophy) in selectedGame.trophies" :key="trophy" style="color: white; display: flex; align-items: center; margin-top: 10px;">
+        <p style="color: black; background-color: grey; width: fit-content; border: solid grey 10px; border-radius: 50px;">
+          <input v-model="checkedTrophies[trophy]" @change="handleCheckboxChangeTrophies" type="checkbox">{{ trophy }}: {{ description }}
+        </p>
+      </div>
+    </details>
     <p>Total checked missions: {{ totalCheckedMissions.checked }} / {{ totalCheckedMissions.total }}</p>
     <p>Total completed side quests: {{ totalCompletedSideQuests.completed }} / {{ totalCompletedSideQuests.total }}</p>
+    <p>Total trophies: {{ totalCheckedTrophies }} / {{ totalTrophies }}</p>
     <p>Completion percentage: {{ completionPercentage }}%</p>
   </div>
 </template>
@@ -31,7 +41,8 @@ export default {
       quests: data[0],
       selectedGame: null,
       sideQuestCounters: {},
-      checkedMissions: []
+      checkedMissions: [],
+      checkedTrophies: {}
     };
   },
   created() {
@@ -39,6 +50,7 @@ export default {
     this.selectedGame = this.quests.find(game => game.name.includes(gameClass));
     this.initializeCounters();
     this.initializeCheckedMissions();
+    this.initializeCheckedTrophies();
   },
   methods: {
     initializeCounters() {
@@ -57,6 +69,17 @@ export default {
         );
       }
     },
+    initializeCheckedTrophies() {
+      const savedTrophies = JSON.parse(localStorage.getItem(`checkedTrophies_${this.selectedGame.name}`));
+      if (savedTrophies) {
+        this.checkedTrophies = savedTrophies;
+      } else {
+        this.checkedTrophies = Object.keys(this.selectedGame.trophies).reduce((acc, key) => {
+          acc[key] = false;
+          return acc;
+        }, {});
+      }
+    },
     incrementCounter(key, max) {
       if (this.sideQuestCounters[key] < max) {
         this.sideQuestCounters[key]++;
@@ -69,6 +92,9 @@ export default {
     },
     handleCheckboxChange() {
       localStorage.setItem(`checkedMissions_${this.selectedGame.name}`, JSON.stringify(this.checkedMissions));
+    },
+    handleCheckboxChangeTrophies() {
+      localStorage.setItem(`checkedTrophies_${this.selectedGame.name}`, JSON.stringify(this.checkedTrophies));
     }
   },
   computed: {
@@ -82,9 +108,15 @@ export default {
       const total = Object.values(this.selectedGame.sideQuest).reduce((sum, count) => sum + count, 0);
       return { completed, total };
     },
+    totalCheckedTrophies() {
+      return Object.values(this.checkedTrophies).filter(Boolean).length;
+    },
+    totalTrophies() {
+      return Object.keys(this.selectedGame.trophies).length;
+    },
     completionPercentage() {
-      const totalMissions = this.totalCheckedMissions.total + this.totalCompletedSideQuests.total;
-      const completedMissions = this.totalCheckedMissions.checked + this.totalCompletedSideQuests.completed;
+      const totalMissions = this.totalCheckedMissions.total + this.totalCompletedSideQuests.total + this.totalTrophies;
+      const completedMissions = this.totalCheckedMissions.checked + this.totalCompletedSideQuests.completed + this.totalCheckedTrophies;
       return totalMissions > 0 ? ((completedMissions / totalMissions) * 100).toFixed(2) : 0;
     }
   },
