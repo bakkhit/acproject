@@ -42,7 +42,7 @@ export default {
 .timeline {
   position: relative;
   width: 3px;
-  height: calc(100vh - 60px); /* Adjust the height to account for the footer height */
+  height: 50vh;
   background-color: white;
   margin: 10%;
 }
