@@ -31,6 +31,7 @@ export default {
   padding: 1em;
 }
 .widgets{
+  min-width: 100%;
   display: flex;
   background-color: aliceblue;
   border-radius: 10%;

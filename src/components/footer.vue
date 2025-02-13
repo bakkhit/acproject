@@ -1,20 +1,11 @@
 <template>
     <div id="footer">
-        <div class="footerItem">
-            <a href="">
-                <img src="/acGreyLogo.png" alt="games">
-            </a>
-        </div>
-        <div class="footerItem">
-            <a href="">
-                <img src="/acGreyLogo.png" alt="timeline">
-            </a>
-        </div>
-        <div class="footerItem">
-            <a href="">
-                <img src="/acGreyLogo.png" alt="quiz">
-            </a>
-        </div>
+        <router-link to="/">
+            <img src="/acGreyLogo.png" alt="logoHeader">
+        </router-link>
+        <router-link to="/timeline/">
+            <img src="/acGreyLogo.png" alt="logoHeader">
+        </router-link>
     </div>
 </template>
 <script>
@@ -35,7 +26,8 @@ export default {
 #footer img {
     width: 30px;
 }
-.footerItem{
+
+.footerItem {
     display: flex;
     justify-content: center;
     align-items: center;
@@ -45,7 +37,8 @@ export default {
     border-radius: 100%;
     transition: all 1s;
 }
-.footerItem:hover{
+
+.footerItem:hover {
     background-color: rgb(253, 59, 59);
     scale: 1.2;
 }

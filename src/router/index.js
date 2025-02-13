@@ -14,6 +14,11 @@ const router = createRouter({
       name: 'achievments',
       component: () => import('../Views/Achievments.vue'),
       props: route => ({ gameClass: route.params.gameClass })
+    },
+    {
+      path: '/timeline/',
+      name: 'timeline',
+      component:  () => import('../Views/timeLine.vue')
     }
   ],
 })

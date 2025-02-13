@@ -25,10 +25,15 @@ export default {
 </script>
 
 <style>
+html, body {
+  height: 100%;
+  margin: 0;
+}
+
 #app {
   display: flex;
   flex-direction: column;
-  min-height: 90vh;
+  min-height: 100vh;
 }
 
 .content {
@@ -37,8 +42,7 @@ export default {
 
 #gamesContainer {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  grid-template-rows: repeat(3, 1fr);
+  grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
   gap: 1.5em;
   padding: 1em;
 }
@@ -49,7 +53,7 @@ footer {
   text-align: center;
   line-height: 60px; /* Adjust this value based on the height of your footer */
   height: 60px; /* Adjust this value based on the height of your footer */
-  margin-top: auto;
   width: 100%;
+  margin-top: auto;
 }
 </style>
