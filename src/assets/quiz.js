@@ -1,8 +1,4 @@
-const express = require('express');
-const app = express();
-const port = 3000;
-
-const questions = [
+export const questionsData = [
     {
         question: "Qui est le protagoniste principal d'Assassin's Creed 2 ?",
         answer: "Ezio Auditore",
@@ -112,11 +108,3 @@ const questions = [
         alt_false: "Non, c'est Altaïr Ibn-La'Ahad."
     }
 ];
-
-app.get('/questions', (req, res) => {
-    res.json(questions);
-});
-
-app.listen(port, () => {
-    console.log(`API de quiz AC en ligne sur http://localhost:${port}`);
-});

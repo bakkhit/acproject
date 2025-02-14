@@ -6,6 +6,9 @@
         <router-link to="/timeline/">
             <img src="/acGreyLogo.png" alt="logoHeader">
         </router-link>
+        <router-link to="/quiz/">
+            <img src="/acGreyLogo.png" alt="logoHeader">
+        </router-link>
     </div>
 </template>
 <script>
